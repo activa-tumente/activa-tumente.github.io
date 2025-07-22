@@ -1,8 +1,49 @@
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import { BullyingMetrics } from '../pages/admin/bullying-dashboard/types/dashboardTypes';
-import { getCohesionLevel, getPerceptionText } from '../pages/admin/bullying-dashboard/utils/dataFormatters';
-import { generateGeneralRecommendations, generatePreventiveRecommendations } from '../pages/admin/bullying-dashboard/utils/recommendationUtils';
+// TODO: Restaurar estas importaciones cuando se implementen los archivos correspondientes
+// import { BullyingMetrics } from '../pages/admin/bullying-dashboard/types/dashboardTypes';
+// import { getCohesionLevel, getPerceptionText } from '../pages/admin/bullying-dashboard/utils/dataFormatters';
+// import { generateGeneralRecommendations, generatePreventiveRecommendations } from '../pages/admin/bullying-dashboard/utils/recommendationUtils';
+
+// Tipos temporales hasta que se implementen los archivos correspondientes
+interface BullyingMetrics {
+  [key: string]: any;
+}
+
+// Funciones temporales hasta que se implementen los archivos correspondientes
+function getCohesionLevel(cohesion: number): string {
+  if (cohesion >= 80) return 'Muy Alta';
+  if (cohesion >= 60) return 'Alta';
+  if (cohesion >= 40) return 'Media';
+  if (cohesion >= 20) return 'Baja';
+  return 'Muy Baja';
+}
+
+function getPerceptionText(value: number): string {
+  if (value >= 4.5) return 'Muy Alta';
+  if (value >= 3.5) return 'Alta';
+  if (value >= 2.5) return 'Media';
+  if (value >= 1.5) return 'Baja';
+  return 'Muy Baja';
+}
+
+function generateGeneralRecommendations(metrics: BullyingMetrics): string[] {
+  return [
+    'Implementar programas de intervención inmediata',
+    'Fortalecer la supervisión en espacios comunes',
+    'Desarrollar talleres de convivencia escolar',
+    'Establecer protocolos de seguimiento individual'
+  ];
+}
+
+function generatePreventiveRecommendations(metrics: BullyingMetrics): string[] {
+  return [
+    'Mantener programas de prevención activos',
+    'Continuar fortaleciendo la cohesión grupal',
+    'Realizar seguimiento periódico del clima escolar',
+    'Promover actividades de integración social'
+  ];
+}
 
 /**
  * Genera un informe PDF para el dashboard de bullying
