@@ -16,6 +16,12 @@ Sistema completo de análisis sociométrico para la detección y prevención de 
 - **Backend**: Supabase (PostgreSQL, Auth, Real-time)
 - **Visualización**: Recharts, Framer Motion
 - **Herramientas**: Vite, ESLint, PostCSS
+- **Despliegue**: GitHub Pages con GitHub Actions
+
+## 🌐 Demo en Vivo
+
+El proyecto está desplegado automáticamente en GitHub Pages:
+**https://activa-tumente.github.io/Bull-S/**
 
 ## 📋 Requisitos Previos
 
@@ -51,6 +57,18 @@ Sistema completo de análisis sociométrico para la detección y prevención de 
    ```bash
    npm run dev
    ```
+
+## 🌐 Despliegue en GitHub Pages
+
+El proyecto se despliega automáticamente en GitHub Pages usando GitHub Actions. Para configurar el despliegue:
+
+1. **Configurar GitHub Pages**: Ve a Settings > Pages y selecciona "GitHub Actions" como source
+2. **Agregar Secrets**: En Settings > Secrets and variables > Actions, agrega:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+3. **Despliegue automático**: Cada push a `main` despliega automáticamente
+
+Ver [GITHUB_SETUP.md](./GITHUB_SETUP.md) para instrucciones detalladas.
 
 ## 🏗️ Scripts Disponibles
 
