@@ -33,7 +33,8 @@
             "db:migrate": "echo 'Ejecutar migraciones SQL en Supabase Dashboard'",
             "db:seed": "echo 'Poblar base de datos con datos de prueba'",
             "test": "echo 'Pruebas no configuradas aún'",
-            "test:coverage": "echo 'Cobertura de pruebas no configurada aún'"
+            "test:coverage": "echo 'Cobertura de pruebas no configurada aún'",
+            "check-deployment": "node scripts/check-deployment.js"
       },
       "dependencies": {
             "@rollup/rollup-win32-x64-msvc": "^4.39.0",
