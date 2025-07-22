@@ -8,66 +8,13 @@ export default defineConfig(({ command, mode }) => ({
   base: command === 'build' ? '/Bull-S/' : '/',
   plugins: [react()],
 
-  // Optimizaciones de build
+  // Optimizaciones de build simplificadas
   build: {
-    // Configuración de chunks
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['lucide-react', 'framer-motion', 'recharts'],
-          'supabase-vendor': ['@supabase/supabase-js'],
-          'utils-vendor': ['clsx', 'html2canvas', 'jspdf'],
-
-          // Feature chunks
-          'auth': [
-            './src/lib/auth/AuthContext.tsx',
-            './src/lib/auth/PermissionsContext.tsx',
-            './src/components/auth/LoginForm.tsx',
-            './src/components/auth/ProtectedRoute.tsx'
-          ],
-          'dashboard': [
-            './src/components/dashboard/DashboardBase.tsx',
-            './src/components/dashboard/BullsDashboard.tsx',
-            './src/services/dashboardService.ts'
-          ],
-          'questionnaire': [
-            './src/pages/student/QuestionnairePage.tsx',
-            './src/components/questionnaire/QuestionnaireNavigation.tsx',
-            './src/lib/questionnaireData.ts'
-          ],
-          'reports': [
-            './src/services/reportService.ts',
-            './src/services/reportGenerationService.ts',
-            './src/utils/reportGenerator.ts'
-          ],
-          'admin': [
-            './src/pages/admin/AdminDashboardPage.tsx',
-            './src/pages/admin/UsuariosPage.tsx',
-            './src/pages/admin/EstudiantesPage.tsx',
-            './src/pages/admin/GruposPage.tsx'
-          ],
-          'analysis': [
-            './src/services/sociometricAnalysisService.ts',
-            './src/services/bullsAnalysisService.ts',
-            './src/components/analysis/SociometricAnalysisComponent.tsx'
-          ]
-        }
-      }
-    },
-
     // Configuración de minificación simplificada
     minify: 'esbuild',
 
     // Configuración de sourcemaps
     sourcemap: false,
-
-    // Configuración de assets
-    assetsInlineLimit: 4096,
-
-    // Configuración de CSS
-    cssCodeSplit: true,
 
     // Target para compatibilidad
     target: 'es2015'
