@@ -17,6 +17,7 @@
       "scripts": {
             "dev": "npx vite --port 3001",
             "build": "npx vite build",
+            "build:github": "npx vite build --base=/Bull-S/",
             "lint": "eslint .",
             "lint:fix": "eslint . --fix",
             "preview": "npx vite preview",
