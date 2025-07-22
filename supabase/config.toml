@@ -1,0 +1,11 @@
+# Este archivo configura las funciones de Supabase Edge Functions
+
+# Configuración general
+project_id = "bulls"
+
+# Configuración de funciones
+[functions]
+  [functions.user-management]
+    verify_jwt = false
+  [functions.role-management]
+    verify_jwt = false

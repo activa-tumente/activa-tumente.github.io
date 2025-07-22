@@ -1,0 +1,61 @@
+.link-identity-container {
+  margin-bottom: 1rem;
+}
+
+.link-identity-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background-color: #1e40af; /* Azul oscuro */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.link-identity-button:hover {
+  background-color: #1e3a8a; /* Azul oscuro más intenso */
+}
+
+.link-identity-button:disabled {
+  background-color: #93c5fd; /* Azul claro */
+  cursor: not-allowed;
+}
+
+/* Estilos específicos para cada proveedor */
+.google-button {
+  background-color: #4285F4;
+}
+
+.google-button:hover {
+  background-color: #3367D6;
+}
+
+.github-button {
+  background-color: #24292e;
+}
+
+.github-button:hover {
+  background-color: #1a1e22;
+}
+
+.facebook-button {
+  background-color: #1877F2;
+}
+
+.facebook-button:hover {
+  background-color: #166FE5;
+}
+
+.twitter-button {
+  background-color: #1DA1F2;
+}
+
+.twitter-button:hover {
+  background-color: #0c85d0;
+}
