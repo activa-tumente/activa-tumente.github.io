@@ -2,6 +2,10 @@
 
 Sistema completo de análisis sociométrico para la detección y prevención de bullying escolar basado en el Test BULL-S.
 
+## 🚀 Demo en Vivo
+
+**[Ver Demo](https://activa-tumente.github.io/Bull-S/)** - Sitio desplegado en GitHub Pages
+
 ## 🎯 Características
 
 - **Análisis Sociométrico**: Implementación completa del Test BULL-S
