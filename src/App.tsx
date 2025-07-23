@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AdminLayout from './auth/AdminLayout';
 import StudentLayout from './layouts/StudentLayout';
@@ -55,7 +55,7 @@ function App() {
   return (
     <AuthProvider>
       <PermissionsProvider>
-        <Router basename="/Bull-S">
+        <Router>
           <Routes>
             {/* Rutas de autenticación accesibles sin autenticación */}
             <Route path="/auth/student" element={<StudentLoginPageSimple />} />
