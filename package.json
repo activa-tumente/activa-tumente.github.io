@@ -37,13 +37,16 @@
             "test:coverage": "echo 'Cobertura de pruebas no configurada aún'",
             "check-deployment": "node scripts/check-deployment.js",
             "test-build": "node scripts/test-build.js",
-            "deploy-preview": "npm run build && npx vite preview --port 4173"
+            "deploy-preview": "npm run build && npx vite preview --port 4173",
+            "predeploy": "npm run build",
+            "deploy": "gh-pages -d dist"
       },
       "dependencies": {
             "@rollup/rollup-win32-x64-msvc": "^4.39.0",
             "@supabase/supabase-js": "^2.52.0",
             "clsx": "^2.1.1",
             "framer-motion": "^12.6.3",
+            "gh-pages": "^6.3.0",
             "html2canvas": "^1.4.1",
             "jspdf": "^3.0.1",
             "jspdf-autotable": "^5.0.2",
