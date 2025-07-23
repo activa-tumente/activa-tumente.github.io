@@ -3,6 +3,7 @@
       "private": true,
       "version": "2.0.0",
       "type": "module",
+      "homepage": "https://activa-tumente.github.io/Bull-S",
       "description": "Sistema completo de análisis sociométrico para la detección y prevención de bullying escolar basado en el Test BULL-S",
       "author": "BULL-S Development Team",
       "license": "MIT",
@@ -16,7 +17,8 @@
       ],
       "scripts": {
             "dev": "npx vite --port 3001",
-            "build": "npx vite build",
+            "build": "npx vite build && npm run copy-404",
+            "copy-404": "copy dist\\index.html dist\\404.html",
             "lint": "eslint .",
             "lint:fix": "eslint . --fix",
             "preview": "npx vite preview",
@@ -33,7 +35,9 @@
             "db:seed": "echo 'Poblar base de datos con datos de prueba'",
             "test": "echo 'Pruebas no configuradas aún'",
             "test:coverage": "echo 'Cobertura de pruebas no configurada aún'",
-            "check-deployment": "node scripts/check-deployment.js"
+            "check-deployment": "node scripts/check-deployment.js",
+            "test-build": "node scripts/test-build.js",
+            "deploy-preview": "npm run build && npx vite preview --port 4173"
       },
       "dependencies": {
             "@rollup/rollup-win32-x64-msvc": "^4.39.0",
