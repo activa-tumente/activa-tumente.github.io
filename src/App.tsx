@@ -55,7 +55,7 @@ function App() {
   return (
     <AuthProvider>
       <PermissionsProvider>
-        <Router>
+        <Router basename="/Bull-S">
           <Routes>
             {/* Rutas de autenticación accesibles sin autenticación */}
             <Route path="/auth/student" element={<StudentLoginPageSimple />} />
