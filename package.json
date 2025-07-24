@@ -39,7 +39,7 @@
             "test-build": "node scripts/test-build.js",
             "deploy-preview": "npm run build && npx vite preview --port 4173",
             "predeploy": "npm run build",
-            "deploy": "gh-pages -d dist"
+            "deploy": "gh-pages -d dist -r https://github.com/activa-tumente/activa-tumente.github.io.git"
       },
       "dependencies": {
             "@rollup/rollup-win32-x64-msvc": "^4.39.0",
