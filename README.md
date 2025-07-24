@@ -4,41 +4,49 @@ Sistema completo de análisis sociométrico para la detección y prevención de 
 
 ## 🚀 Demo en Vivo
 
-**[Ver Demo](https://activa-tumente.github.io/Bull-S/)** - Sitio desplegado en GitHub Pages
+**[Ver Demo](https://activa-tumente.github.io/)** - Sitio desplegado en GitHub Pages
 
 ## 🎯 Características
 
 - **Análisis Sociométrico**: Implementación completa del Test BULL-S
-- **Dashboard Interactivo**: Visualización de datos en tiempo real
+- **Dashboard Interactivo**: Visualización de datos en tiempo real con HashRouter
 - **Gestión de Usuarios**: Sistema de autenticación para estudiantes y administradores
 - **Reportes Avanzados**: Generación de reportes en PDF con análisis detallados
 - **Interfaz Moderna**: Desarrollado con React, TypeScript y Tailwind CSS
+- **Optimizado**: Chunks separados para mejor rendimiento
 
 ## 🚀 Tecnologías
 
 - **Frontend**: React 19, TypeScript, Tailwind CSS
+- **Router**: HashRouter para compatibilidad total con GitHub Pages
 - **Backend**: Supabase (PostgreSQL, Auth, Real-time)
 - **Visualización**: Recharts, Framer Motion
-- **Herramientas**: Vite, ESLint, PostCSS
+- **Herramientas**: Vite (optimizado), ESLint, PostCSS
 - **Despliegue**: GitHub Pages con GitHub Actions
 
 ## 🌐 Demo en Vivo
 
 El proyecto está desplegado automáticamente en GitHub Pages:
-**https://activa-tumente.github.io/Bull-S/**
+**https://activa-tumente.github.io/**
+
+### URLs de la Aplicación
+- **Inicio**: https://activa-tumente.github.io/#/
+- **Login Admin**: https://activa-tumente.github.io/#/auth/admin
+- **Login Estudiante**: https://activa-tumente.github.io/#/auth/student
+- **Dashboard**: https://activa-tumente.github.io/#/admin/dashboard
 
 ## 📋 Requisitos Previos
 
 - Node.js 18+ 
-- npm o yarn
+- npm
 - Cuenta en Supabase
 
 ## ⚙️ Instalación
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/activa-tumente/Bull-S.git
-   cd Bull-S
+   git clone https://github.com/activa-tumente/activa-tumente.github.io.git
+   cd activa-tumente.github.io
    ```
 
 2. **Instalar dependencias**
@@ -64,7 +72,7 @@ El proyecto está desplegado automáticamente en GitHub Pages:
 
 ## 🌐 Despliegue en GitHub Pages
 
-El proyecto se despliega automáticamente en GitHub Pages usando GitHub Actions. Para configurar el despliegue:
+El proyecto se despliega automáticamente en GitHub Pages usando GitHub Actions:
 
 1. **Configurar GitHub Pages**: Ve a Settings > Pages y selecciona "GitHub Actions" como source
 2. **Agregar Secrets**: En Settings > Secrets and variables > Actions, agrega:
@@ -72,13 +80,18 @@ El proyecto se despliega automáticamente en GitHub Pages usando GitHub Actions.
    - `VITE_SUPABASE_ANON_KEY`
 3. **Despliegue automático**: Cada push a `main` despliega automáticamente
 
-Ver [GITHUB_SETUP.md](./GITHUB_SETUP.md) para instrucciones detalladas.
+### Despliegue Manual
+```bash
+npm run deploy  # Despliega usando gh-pages
+```
 
 ## 🏗️ Scripts Disponibles
 
 - `npm run dev` - Servidor de desarrollo
-- `npm run build` - Construir para producción
+- `npm run build` - Construir para producción (con chunks optimizados)
 - `npm run preview` - Vista previa de la build
+- `npm run deploy` - Despliegue manual a GitHub Pages
+- `npm run test-build` - Verificar build para GitHub Pages
 - `npm run lint` - Ejecutar linter
 - `npm run type-check` - Verificar tipos TypeScript
 
@@ -94,6 +107,22 @@ src/
 ├── hooks/         # Custom hooks
 └── utils/         # Funciones utilitarias
 ```
+
+## ⚡ Optimizaciones
+
+### Chunks Separados
+- **react-vendor**: React y React DOM
+- **router-vendor**: React Router DOM
+- **supabase-vendor**: Cliente de Supabase
+- **ui-vendor**: Componentes UI (Lucide, Framer Motion)
+- **charts-vendor**: Recharts para visualizaciones
+- **pdf-vendor**: Generación de PDFs
+- **forms-vendor**: Componentes de formularios
+
+### HashRouter
+- Compatibilidad total con GitHub Pages
+- No requiere configuración del servidor
+- URLs con hash (#/) para navegación SPA
 
 ## 🔧 Configuración de Base de Datos
 
